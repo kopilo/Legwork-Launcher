@@ -51,6 +51,7 @@ searchInput.bind("<Key>", keyUp)
 
 #resultsbox on select
 def resultSelect(key):
+	if(DEBUG): print "INFO: resultsbox key pressed " + str(key.keycode)
 	if key.keycode == 36 or str(key.keycode) == "??":
 		print resultsbox.get(ACTIVE)
 
