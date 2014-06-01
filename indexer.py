@@ -1,15 +1,20 @@
 import sys
 #class for searching and indexing applications
 class indexer:
+	apps = {}
 	
-	def determineOS():
-		print(sys.platform)
+	def __init__(self):
+		print ""
+		
+	def determineOS(self):
+		return(sys.platform)
 	
-	def indexApplications():
+	def indexApplication(self):
+		print ""
+	
+	def saveIndex(self):
 		print "blah"
 	
-	def saveIndex():
-		print "blah"
-	
-	def loadIndex():
+	def load(self):
+		#load key/value array into memory and return array of keys.
 		print "blah"

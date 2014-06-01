@@ -1,8 +1,9 @@
 import sys,re
 import indexer
 
-db = indexer
+db = indexer.indexer()
 DEBUG = ("-debug" in sys.argv)
+#apps = db.load()
 apps = ["1", "apple", "apple-II", "app", "Apple-III", "app4", "app5",
 "app6","app7","app8","app9","app10"]
 
@@ -24,16 +25,17 @@ def search(s):
     
 #gui stuff    
 from Tkinter import *
-
 master = Tk()
+master.title("Legwork Launcher")
 
+#sets geometry of window based on percentage of pixels
 w = master.winfo_screenwidth()
 h = master.winfo_screenheight()
-master.title("Legwork Launcher")
-#sets geometry of window based on percentage of pixels
 #width x height + offset + offset
-master.geometry(str(int(w * .4)) + "x" + str(int(h * .2)) +
-"+"+str(int(w *.3))+"+"+str(int(h * .40)))
+master.geometry(str(int(w * .4)) + "x" + str(int(h * .15)) +
+"+"+str(int(w *.3))+"+"+str(int(h * .375)))
+del w
+del h
 
 #search field
 searchInput = Entry(master)
@@ -53,8 +55,8 @@ searchInput.bind("<Key>", keyUp)
 def resultSelect(key):
 	if(DEBUG): print "INFO: resultsbox key pressed " + str(key.keycode)
 	if key.keycode == 36 or str(key.keycode) == "??":
+		#TODO: launch application here...
 		print resultsbox.get(ACTIVE)
-
 
 #results table
 resultsbox = Listbox(master)
