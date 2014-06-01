@@ -51,7 +51,7 @@ searchInput.bind("<Key>", keyUp)
 
 #resultsbox on select
 def resultSelect(key):
-	if key.keycode == 36:
+	if key.keycode == 36 or str(key.keycode) == "??":
 		print resultsbox.get(ACTIVE)
 
 
@@ -59,5 +59,6 @@ def resultSelect(key):
 resultsbox = Listbox(master)
 resultsbox.pack(fill=BOTH, expand=1)
 resultsbox.bind("<Key>", resultSelect)
+resultsbox.bind("<Double-Button-1>", resultSelect)
 
 mainloop()
